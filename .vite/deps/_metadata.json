@@ -1,0 +1,15 @@
+{
+  "hash": "3dbff9d9",
+  "configHash": "1049e908",
+  "lockfileHash": "9e2fb737",
+  "browserHash": "2ef9423b",
+  "optimized": {
+    "redux": {
+      "src": "../../node_modules/redux/dist/redux.mjs",
+      "file": "redux.js",
+      "fileHash": "7ae70dc2",
+      "needsInterop": false
+    }
+  },
+  "chunks": {}
+}

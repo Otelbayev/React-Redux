@@ -1,46 +1,32 @@
-import { createStore } from "./node_modules/redux/src/createStore";
+import { createStore, bindActionCreators } from "redux";
+import * as actions from "./actions";
+import { reducer } from "./reducer";
 
 const inc = document.getElementById("inc");
 const dec = document.getElementById("dec");
 const rnd = document.getElementById("rnd");
 const reset = document.getElementById("reset");
 
-const initialState = {
-  count: 0,
-  name: "Jasurbek",
-  surname: "O'telbayev",
-};
-
-const reducer = (state = initialState, action) => {
-  switch (action.type) {
-    case "INC":
-      return { ...state, count: state.count + 1 };
-    case "DEC":
-      return { ...state, count: state.count - 1 };
-    case "RND":
-      return { ...state, count: state.count + action.payload };
-    case "RESET":
-      return {
-        ...state,
-        count: 0,
-      };
-    default:
-      return state;
-  }
-};
-
-const store = createStore(reducer);
+const { getState, subscribe, dispatch } = createStore(reducer);
 
 const updateUi = () => {
-  document.getElementById("count").textContent = store.getState().count;
+  document.getElementById("count").textContent = getState().count;
 };
 
-store.subscribe(updateUi);
+subscribe(updateUi);
 
-inc.addEventListener("click", () => store.dispatch({ type: "INC" }));
-dec.addEventListener("click", () => store.dispatch({ type: "DEC" }));
-reset.addEventListener("click", () => store.dispatch({ type: "RESET" }));
+// const bindActionCreators =
+//   (creator, dispatch) =>
+//   (...args) => {
+//     dispatch(creator(...args));
+//   };
+
+const { decr, incr, resetr, rndr } = bindActionCreators(actions, dispatch);
+
+inc.addEventListener("click", incr);
+dec.addEventListener("click", decr);
+reset.addEventListener("click", resetr);
 rnd.addEventListener("click", () => {
   const randomValue = Math.floor(Math.random() * 100);
-  store.dispatch({ type: "RND", payload: randomValue });
+  rndr(randomValue);
 });
