@@ -1,0 +1,55 @@
+{
+  "players": [
+    {
+      "id": "d32801ad-e716-4bc8-b9bd-ab5b82d623b5",
+      "name": "sdvsv",
+      "country": "sdvsd",
+      "continent": "Europe"
+    },
+    {
+      "id": "2dfcea3d-c299-43d9-822d-88eb0f2b0476",
+      "name": "dfbdfbb",
+      "country": "dbdfbd",
+      "continent": "Asia"
+    },
+    {
+      "id": "ba166a29-be1a-4402-ab00-d83692efd1f1",
+      "name": "dfbdfbb",
+      "country": "dbdfbd",
+      "continent": "Africa"
+    },
+    {
+      "id": "60b2de3b-5472-4b2e-909b-034c05456fae",
+      "name": "dfbdfbb",
+      "country": "dbdfbd",
+      "continent": "America"
+    }
+  ],
+  "filters": [
+    {
+      "id": "all",
+      "label": "All",
+      "classes": "bg-gradient-to-r from-black to-slate-600 rounded-l-md"
+    },
+    {
+      "id": "europe",
+      "label": "Europe",
+      "classes": "bg-gradient-to-r from-blue-500 to-blue-700"
+    },
+    {
+      "id": "asia",
+      "label": "Asia",
+      "classes": "bg-gradient-to-r from-green-500 to-green-700"
+    },
+    {
+      "id": "africa",
+      "label": "Africa",
+      "classes": "bg-gradient-to-r from-yellow-500 to-yellow-700"
+    },
+    {
+      "id": "america",
+      "label": "America",
+      "classes": "bg-gradient-to-r from-cyan-500 to-cyan-700 rounded-r-md"
+    }
+  ]
+}
